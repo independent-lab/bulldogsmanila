@@ -4,7 +4,7 @@ slug: "chairman-of-the-couch"
 date: 2026-09-04
 excerpt: "Beer has called the afternoon meeting to order. The agenda is naps, snacks, and one meaningful sigh."
 heroImage: "/images/stories/beer-couch.jpg"
-heroAlt: "Beer, an older English bulldog, settled comfortably on the family couch"
+heroAlt: "Beer, a white-and-brown English bulldog, lying comfortably on the wooden floor at home"
 dogs: [beer]
 category: funny
 feelings: [laugh, comfort, companionship]

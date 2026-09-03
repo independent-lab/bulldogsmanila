@@ -4,7 +4,7 @@ slug: "the-tiny-princess-has-standards"
 date: 2026-09-03
 excerpt: "Bao Bao has reviewed the cushions. Only one has passed inspection."
 heroImage: "/images/stories/baobao-standards.jpg"
-heroAlt: "Bao Bao resting neatly on her chosen cushion at home"
+heroAlt: "Bao Bao standing on the couch in a bright blue-and-yellow outfit"
 dogs: [baobao]
 category: everyday
 feelings: [cozy, home, joy]
