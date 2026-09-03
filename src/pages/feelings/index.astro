@@ -1,0 +1,9 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { feelingGroups } from '../../data/taxonomy';
+import { asset } from '../../utils/paths';
+---
+<BaseLayout title="Find a Feeling — BulldogsManila" description="Find a BulldogsManila story for comfort, laughter, a slower day, or a sense of home.">
+  <header class="page-hero wrap"><p class="eyebrow">Find a feeling</p><h1>What do you need today?</h1><p class="lede">You do not need to know which chapter to open. Start with how the day feels.</p></header>
+  <section class="wrap feeling-index">{Object.entries(feelingGroups).map(([slug, feeling], index) => <a href={asset(`/feelings/${slug}/`)}><span>0{index + 1}</span><div><h2>{feeling.title}</h2><p>{feeling.intro}</p></div><b aria-hidden="true">→</b></a>)}</section>
+</BaseLayout>

@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import StoryCard from '../../components/StoryCard.astro';
+import { feelingGroups } from '../../data/taxonomy';
+import { publishedStories } from '../../lib/stories';
+export async function getStaticPaths() {
+  const all = await publishedStories();
+  const slugs = new Set([...Object.keys(feelingGroups), ...all.flatMap((story) => story.data.feelings)]);
+  return [...slugs].map((feeling) => ({ params: { feeling }, props: { feeling, info: feelingGroups[feeling] ?? { title: `I need ${feeling}`, intro: `A small shelf of stories carrying ${feeling}.`, includes: [feeling] } } }));
+}
+const { info } = Astro.props;
+const stories = (await publishedStories()).filter((story) => story.data.feelings.some((tag) => info.includes.includes(tag)));
+---
+<BaseLayout title={`${info.title} — BulldogsManila`} description={info.intro}>
+  <header class="page-hero wrap"><p class="eyebrow">A shelf for this kind of day</p><h1>{info.title}</h1><p class="lede">{info.intro}</p></header>
+  <section class="section wrap"><div class="story-grid">{stories.map((story) => <StoryCard story={story} />)}</div>{stories.length === 0 && <p class="empty-state">We are still writing this shelf. Come back home soon.</p>}</section>
+</BaseLayout>

@@ -1,0 +1,9 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { dogList } from '../../data/dogs';
+import { asset } from '../../utils/paths';
+---
+<BaseLayout title="The Family — BulldogsManila" description="Meet Bacon, Beer, Bao Bao, and Bowser—the family at the heart of BulldogsManila.">
+  <header class="page-hero wrap"><p class="eyebrow">The pack</p><h1>Everybody has a place here.</h1><p class="lede">Four distinct ways of moving through the same home.</p></header>
+  <section class="wrap family-list">{dogList.map((dog, index) => <article class:list={['family-row', { legacy: dog.status === 'legacy' }]}><div><p class="eyebrow">0{index + 1} · {dog.status === 'legacy' ? 'In our memory archive' : dog.role}</p><h2><a href={asset(`/family/${dog.slug}/`)}>{dog.name}</a></h2><p class="lede">{dog.personality}</p><p>{dog.biography}</p><a class="text-link" href={asset(`/family/${dog.slug}/`)}>Open {dog.name}’s notebook →</a></div><img src={asset(dog.portrait)} alt={`Portrait of ${dog.name}`} width="800" height="800" loading={index === 0 ? 'eager' : 'lazy'} /></article>)}</section>
+</BaseLayout>

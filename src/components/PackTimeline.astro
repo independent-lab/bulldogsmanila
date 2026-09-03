@@ -1,0 +1,10 @@
+---
+import type { Story } from '../lib/stories';
+import { categories } from '../data/taxonomy';
+import { asset } from '../utils/paths';
+const { stories } = Astro.props as { stories: Story[] };
+const chronological = [...stories].sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf());
+---
+<ol class="timeline">
+  {chronological.map((story) => <li><time datetime={story.data.date.toISOString()}>{story.data.date.toLocaleDateString('en-PH', { month: 'short', year: 'numeric' })}</time><div><p class="eyebrow">{categories[story.data.category]}</p><h3><a href={asset(`/stories/${story.data.slug}/`)}>{story.data.title}</a></h3><p>{story.data.excerpt}</p></div></li>)}
+</ol>

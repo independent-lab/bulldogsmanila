@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import StoryCard from '../../components/StoryCard.astro';
+import { categories } from '../../data/taxonomy';
+import { dogList } from '../../data/dogs';
+import { publishedStories } from '../../lib/stories';
+const stories = await publishedStories();
+const feelings = [...new Set(stories.flatMap((story) => story.data.feelings))].sort();
+---
+<BaseLayout title="Stories — BulldogsManila" description="The complete BulldogsManila archive: ordinary days, soft moments, family history, and chaos from home.">
+  <header class="page-hero wrap"><p class="eyebrow">The family notebook</p><h1>Stories from home</h1><p class="lede">An archive of the days that looked ordinary until we wrote them down.</p></header>
+  <section class="wrap archive" data-story-archive>
+    <div class="filters" aria-label="Filter stories">
+      <label>Dog<select data-filter="dog"><option value="">All dogs</option>{dogList.map((dog) => <option value={dog.slug}>{dog.name}</option>)}</select></label>
+      <label>Chapter<select data-filter="category"><option value="">All chapters</option>{Object.entries(categories).map(([slug, label]) => <option value={slug}>{label}</option>)}</select></label>
+      <label>Feeling<select data-filter="feeling"><option value="">All feelings</option>{feelings.map((feeling) => <option value={feeling}>{feeling}</option>)}</select></label>
+      <button class="filter-reset" type="button">Clear</button>
+    </div>
+    <p class="filter-count" aria-live="polite">{stories.length} stories</p>
+    <div class="story-grid">{stories.map((story) => <div data-story data-dogs={story.data.dogs.join(' ')} data-category={story.data.category} data-feelings={story.data.feelings.join(' ')}><StoryCard story={story} /></div>)}</div>
+    <p class="empty-state" hidden>No stories match those filters yet. Try another combination.</p>
+  </section>
+  <script>
+    const archive = document.querySelector('[data-story-archive]');
+    if (archive) {
+      const selects = [...archive.querySelectorAll<HTMLSelectElement>('select')];
+      const cards = [...archive.querySelectorAll<HTMLElement>('[data-story]')];
+      const count = archive.querySelector('.filter-count');
+      const empty = archive.querySelector('.empty-state');
+      const apply = () => {
+        const values = Object.fromEntries(selects.map((select) => [select.dataset.filter, select.value]));
+        let visible = 0;
+        cards.forEach((card) => {
+          const show = (!values.dog || card.dataset.dogs?.split(' ').includes(values.dog)) && (!values.category || card.dataset.category === values.category) && (!values.feeling || card.dataset.feelings?.split(' ').includes(values.feeling));
+          card.toggleAttribute('hidden', !show); if (show) visible++;
+        });
+        if (count) count.textContent = `${visible} ${visible === 1 ? 'story' : 'stories'}`;
+        empty?.toggleAttribute('hidden', visible !== 0);
+      };
+      selects.forEach((select) => select.addEventListener('change', apply));
+      archive.querySelector('.filter-reset')?.addEventListener('click', () => { selects.forEach((select) => select.value = ''); apply(); });
+    }
+  </script>
+</BaseLayout>

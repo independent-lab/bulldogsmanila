@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import StoryCard from '../components/StoryCard.astro';
+import { dogList } from '../data/dogs';
+import { feelingGroups } from '../data/taxonomy';
+import { homepageStory, publishedStories } from '../lib/stories';
+import { asset } from '../utils/paths';
+const stories = await publishedStories();
+const latest = homepageStory(stories);
+---
+<BaseLayout>
+  <section class="home-hero wrap">
+    <div class="hero-copy"><p class="eyebrow">Stories from a Manila home</p><h1>Come home<br />to the pack.</h1><p class="lede">Four dogs. One family. The ordinary days we never want to forget.</p><a class="text-link" href={asset('/stories/')}>Read our stories <span aria-hidden="true">→</span></a></div>
+    {latest && <figure class="hero-image"><img src={asset(latest.data.heroImage)} alt={latest.data.heroAlt} width="1200" height="800" fetchpriority="high" /><figcaption>Life, as observed from floor level.</figcaption></figure>}
+  </section>
+
+  {latest && <section class="section wrap"><header class="section-heading"><div><p class="eyebrow">Latest from home</p><h2>A new page in the family notebook</h2></div><a href={asset('/stories/')}>See the archive</a></header><StoryCard story={latest} priority={true} /></section>}
+
+  <section class="section family-strip"><div class="wrap"><p class="eyebrow">Meet the family</p><div class="dog-grid">{dogList.map((dog, index) => <a class:list={['dog-card', { legacy: dog.status === 'legacy' }]} href={asset(`/family/${dog.slug}/`)}><span class="dog-number">0{index + 1}</span><img src={asset(dog.portrait)} alt={`Portrait of ${dog.name}`} width="500" height="500" loading="lazy" /><h3>{dog.name}</h3><p>{dog.role}</p></a>)}</div></div></section>
+
+  <section class="section wrap feeling-callout"><p class="eyebrow">What do you need today?</p><h2>There is a story for that feeling.</h2><div class="feeling-links">{Object.entries(feelingGroups).map(([slug, feeling]) => <a href={asset(`/feelings/${slug}/`)}>{feeling.title}<span aria-hidden="true">↗</span></a>)}</div></section>
+</BaseLayout>

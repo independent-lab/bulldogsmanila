@@ -1,0 +1,18 @@
+---
+import type { Story } from '../lib/stories';
+import { dogs } from '../data/dogs';
+import { categories } from '../data/taxonomy';
+import { asset } from '../utils/paths';
+const { story, priority = false } = Astro.props as { story: Story; priority?: boolean };
+---
+<article class="story-card">
+  <a class="card-image" href={asset(`/stories/${story.data.slug}/`)} tabindex="-1">
+    <img src={asset(story.data.heroImage)} alt={story.data.heroAlt} loading={priority ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : 'auto'} width="900" height="600" />
+  </a>
+  <div class="card-copy">
+    <p class="eyebrow">{categories[story.data.category]} · {story.data.date.toLocaleDateString('en-PH', { dateStyle: 'medium' })}</p>
+    <h3><a href={asset(`/stories/${story.data.slug}/`)}>{story.data.title}</a></h3>
+    <p>{story.data.excerpt}</p>
+    <p class="card-dogs">With {story.data.dogs.map((slug) => dogs[slug].name).join(' & ')}</p>
+  </div>
+</article>

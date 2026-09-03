@@ -1,0 +1,12 @@
+---
+import { asset } from '../utils/paths';
+const links = [['Home', '/'], ['Family', '/family/'], ['Stories', '/stories/'], ['Find a feeling', '/feelings/']];
+---
+<header class="site-header">
+  <a class="brand" href={asset('/')} aria-label="BulldogsManila home"><span>BULLDOGS</span><strong>MANILA</strong></a>
+  <nav aria-label="Primary navigation">
+    {links.map(([label, href]) => <a href={asset(href)} aria-current={Astro.url.pathname === href ? 'page' : undefined}>{label}</a>)}
+    <a href="https://www.facebook.com/bulldogsmanila" rel="me">Community</a>
+    <a class="nav-cta" href="https://chatgpt.com/" rel="external">Ask the Pack</a>
+  </nav>
+</header>
