@@ -5,6 +5,7 @@ date: 2026-09-02
 excerpt: "Bowser has discovered that the hallway is a racetrack and stopping is tomorrow’s problem."
 heroImage: "/images/stories/bowser-zoom.jpg"
 heroAlt: "Bowser, a curly black dog, sitting on the wooden floor in a yellow-and-black bee outfit"
+socialImage: "/images/social/bowser-zoom.jpg"
 dogs: [bowser]
 category: funny
 feelings: [laugh, chaos, joy]

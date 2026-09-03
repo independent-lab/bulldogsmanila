@@ -13,7 +13,7 @@ const allStories = await publishedStories();
 const related = relatedStories(story, allStories);
 const socials = Object.entries(story.data.socialLinks).filter(([, url]) => Boolean(url));
 ---
-<BaseLayout title={`${story.data.title} — BulldogsManila`} description={story.data.excerpt} image={story.data.heroImage} articleDate={story.data.date}>
+<BaseLayout title={`${story.data.title} — BulldogsManila`} description={story.data.excerpt} image={story.data.socialImage ?? story.data.heroImage} imageAlt={story.data.heroAlt} articleDate={story.data.date}>
   <article class="story-page">
     <header class="story-header wrap"><p class="eyebrow">{categories[story.data.category]} · {story.data.date.toLocaleDateString('en-PH', { dateStyle: 'long' })}</p><h1>{story.data.title}</h1><p class="lede">{story.data.excerpt}</p><p class="byline">A story with {story.data.dogs.map((slug) => dogs[slug].name).join(' & ')}</p></header>
     <div class="story-hero wrap"><img src={asset(story.data.heroImage)} alt={story.data.heroAlt} width="1400" height="933" fetchpriority="high" /></div>

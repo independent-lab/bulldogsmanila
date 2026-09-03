@@ -9,6 +9,8 @@ excerpt: "One or two sentences used on cards and in search previews."
 # Put the image in public/images/stories/ and begin this path with /images/stories/.
 heroImage: "/images/stories/file-name.jpg"
 heroAlt: "Describe what is visible for someone who cannot see the image"
+# Optional wide 1200 × 630 image for large social link cards.
+socialImage: "/images/social/file-name.jpg"
 # Choose one or more: bacon, beer, baobao, bowser.
 dogs: [beer]
 # Choose one: everyday, heart, funny, soft.

@@ -5,6 +5,7 @@ date: 2026-09-01
 excerpt: "Some parts of home keep the shape of the ones who taught us how to belong there."
 heroImage: "/images/stories/bacon-places.jpg"
 heroAlt: "Bacon, a white-and-brown English bulldog, sleeping on his side on the wooden floor at home"
+socialImage: "/images/social/bacon-places.jpg"
 dogs: [bacon]
 category: heart
 feelings: [memory, home, grief, nostalgia, comfort]

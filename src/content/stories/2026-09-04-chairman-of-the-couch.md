@@ -5,6 +5,7 @@ date: 2026-09-04
 excerpt: "Beer has called the afternoon meeting to order. The agenda is naps, snacks, and one meaningful sigh."
 heroImage: "/images/stories/beer-couch.jpg"
 heroAlt: "Beer, a white-and-brown English bulldog, lying comfortably on the wooden floor at home"
+socialImage: "/images/social/beer-couch.jpg"
 dogs: [beer]
 category: funny
 feelings: [laugh, comfort, companionship]

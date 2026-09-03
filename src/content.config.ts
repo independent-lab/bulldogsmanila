@@ -10,6 +10,7 @@ const stories = defineCollection({
     excerpt: z.string(),
     heroImage: z.string(),
     heroAlt: z.string(),
+    socialImage: z.string().optional(),
     dogs: z.array(z.enum(['bacon', 'beer', 'baobao', 'bowser'])).min(1),
     category: z.enum(['everyday', 'heart', 'funny', 'soft']),
     feelings: z.array(z.string()).default([]),

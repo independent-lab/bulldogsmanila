@@ -4,7 +4,7 @@ BulldogsManila is the permanent home of the story. Social posts can point back h
 
 ## Publish a story
 
-1. Prepare a landscape image and add it to `public/images/stories/`. Use a clear lowercase filename such as `beer-rainy-afternoon.jpg`.
+1. Prepare a story image and add it to `public/images/stories/`. Use a clear lowercase filename such as `beer-rainy-afternoon.jpg`. For a large Meta link card, also add a 1200 × 630 crop to `public/images/social/` and set `socialImage` in the story frontmatter.
 2. Copy `src/content/stories/_template.md` to a new file named `YYYY-MM-DD-story-slug.md` in the same folder.
 3. Fill every required frontmatter field. Keep the `slug` stable once the story is live.
 4. Write the story below the second `---` line. Delete the template comments if you prefer a cleaner file.

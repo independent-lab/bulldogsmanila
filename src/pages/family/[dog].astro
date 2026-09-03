@@ -9,7 +9,7 @@ export function getStaticPaths() { return dogList.map((dog) => ({ params: { dog:
 const { dog } = Astro.props;
 const stories = (await publishedStories()).filter((story) => story.data.dogs.includes(dog.slug));
 ---
-<BaseLayout title={`${dog.name} — The BulldogsManila Family`} description={`${dog.name}: ${dog.personality}`} image={dog.portrait}>
+<BaseLayout title={`${dog.name} — The BulldogsManila Family`} description={`${dog.name}: ${dog.personality}`} image={dog.socialImage} imageAlt={`Portrait of ${dog.name}`}>
   <header class:list={['dog-hero', 'wrap', { legacy: dog.status === 'legacy' }]}><div><p class="eyebrow">{dog.status === 'legacy' ? 'The memory archive' : 'Meet the family'}</p><h1>{dog.name}</h1><p class="role">{dog.role}</p><p class="lede">{dog.personality}</p><p>{dog.biography}</p></div><img src={asset(dog.portrait)} alt={`Portrait of ${dog.name}`} width="900" height="900" fetchpriority="high" /></header>
   <section class="arc"><div class="wrap"><p class="eyebrow">The chapter we are keeping</p><p>{dog.arc}</p></div></section>
   <section class="section wrap dog-archive"><div class="view-tabs" role="tablist" aria-label={`${dog.name} archive view`}><button type="button" role="tab" aria-selected="true" aria-controls="stories-panel">Stories</button><button type="button" role="tab" aria-selected="false" aria-controls="timeline-panel">Timeline</button></div><div id="stories-panel" role="tabpanel" class="story-grid">{stories.map((story) => <StoryCard story={story} />)}</div><div id="timeline-panel" role="tabpanel" hidden><PackTimeline stories={stories} /></div></section>

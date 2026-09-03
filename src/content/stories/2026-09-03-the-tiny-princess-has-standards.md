@@ -5,6 +5,7 @@ date: 2026-09-03
 excerpt: "Bao Bao has reviewed the cushions. Only one has passed inspection."
 heroImage: "/images/stories/baobao-standards.jpg"
 heroAlt: "Bao Bao standing on the couch in a bright blue-and-yellow outfit"
+socialImage: "/images/social/baobao-standards.jpg"
 dogs: [baobao]
 category: everyday
 feelings: [cozy, home, joy]
