@@ -14,7 +14,7 @@ socialLinks: {}
 tags: [condo-life, cushions, personality]
 ---
 
-This is a seed story for the BulldogsManila editorial system. It keeps the shelf warm until Jules adds the real thing.
+This is a seed story for the BulldogsManila editorial system. It keeps the shelf warm until the real story takes its place.
 
 Bao Bao approaches comfort seriously. A cushion may look acceptable to everyone else and still fail for reasons beyond human understanding.
 

@@ -1,6 +1,6 @@
 # BulldogsManila
 
-BulldogsManila is Jules’s editorial home for stories about Bacon, Beer, Bao Bao, and Bowser. It keeps the family’s everyday, heartfelt, funny, and soft moments together while social platforms act as distribution channels.
+BulldogsManila is the editorial home for stories about Bacon, Beer, Bao Bao, and Bowser. It keeps the family’s everyday, heartfelt, funny, and soft moments together while social platforms act as distribution channels.
 
 ## Technical stack
 

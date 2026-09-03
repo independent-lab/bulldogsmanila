@@ -8,7 +8,7 @@ const stories = await publishedStories();
 const feelings = [...new Set(stories.flatMap((story) => story.data.feelings))].sort();
 ---
 <BaseLayout title="Stories — BulldogsManila" description="The complete BulldogsManila archive: ordinary days, soft moments, family history, and chaos from home.">
-  <header class="page-hero wrap"><p class="eyebrow">The family notebook</p><h1>Stories from home</h1><p class="lede">An archive of the days that looked ordinary until we wrote them down.</p></header>
+  <header class="page-hero wrap"><p class="eyebrow">The family notebook</p><h1>Stories from home</h1><p class="lede">An archive of the days that looked ordinary until they were written down.</p></header>
   <section class="wrap archive" data-story-archive>
     <div class="filters" aria-label="Filter stories">
       <label>Dog<select data-filter="dog"><option value="">All dogs</option>{dogList.map((dog) => <option value={dog.slug}>{dog.name}</option>)}</select></label>

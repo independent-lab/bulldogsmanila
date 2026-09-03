@@ -14,7 +14,7 @@ socialLinks: {}
 tags: [legacy, family-history, remembrance]
 ---
 
-This is a seed story for the BulldogsManila memory archive. Jules can replace it with a particular memory when the time is right.
+This is a seed story for the BulldogsManila memory archive, ready to be replaced with a particular memory when the time is right.
 
 There are places in a home that remain claimed. A patch of afternoon light. The quiet end of the room. The spot from which the whole family could be watched without making a fuss.
 

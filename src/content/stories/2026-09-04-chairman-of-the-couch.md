@@ -14,7 +14,7 @@ socialLinks: {}
 tags: [senior-life, couch, home]
 ---
 
-This is a seed story for the BulldogsManila editorial system. Jules can replace it whenever the real afternoon deserves its own page.
+This is a seed story for the BulldogsManila editorial system, ready to be replaced when the real afternoon deserves its own page.
 
 At some point after lunch, Beer takes the couch. He does not climb onto it so much as assume responsibility for it.
 
