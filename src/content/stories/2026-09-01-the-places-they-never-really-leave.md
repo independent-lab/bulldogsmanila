@@ -4,7 +4,7 @@ slug: "the-places-they-never-really-leave"
 date: 2026-09-01
 excerpt: "Some parts of home keep the shape of the ones who taught us how to belong there."
 heroImage: "/images/stories/bacon-places.jpg"
-heroAlt: "Bacon, a calm English bulldog, resting in warm afternoon light at home"
+heroAlt: "Bacon, a white-and-brown English bulldog, sleeping on his side on the wooden floor at home"
 dogs: [bacon]
 category: heart
 feelings: [memory, home, grief, nostalgia, comfort]
