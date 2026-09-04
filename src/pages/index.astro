@@ -19,4 +19,17 @@ const latest = homepageStory(stories);
   <section class="section family-strip"><div class="wrap"><p class="eyebrow">Meet the family</p><div class="dog-grid">{dogList.map((dog, index) => <a class:list={['dog-card', { legacy: dog.status === 'legacy' }]} href={asset(`/family/${dog.slug}/`)}><span class="dog-number">0{index + 1}</span><img src={asset(dog.portrait)} alt={`Portrait of ${dog.name}`} width="500" height="500" loading="lazy" /><h3>{dog.name}</h3><p>{dog.role}</p></a>)}</div></div></section>
 
   <section class="section wrap feeling-callout"><p class="eyebrow">What do you need today?</p><h2>There is a story for that feeling.</h2><div class="feeling-links">{Object.entries(feelingGroups).map(([slug, feeling]) => <a href={asset(`/feelings/${slug}/`)}>{feeling.title}<span aria-hidden="true">↗</span></a>)}</div></section>
+
+  <section class="section social-channels">
+    <div class="wrap">
+      <p class="eyebrow">One home, four windows</p>
+      <div class="social-intro"><h2>Follow the pack<br />your way.</h2><p>The story changes shape on every platform, but the feeling stays the same: familiar, funny, safe, and close to home.</p></div>
+      <div class="social-grid">
+        <a href="https://www.youtube.com/@bulldogsmanila/" rel="me external"><span class="social-mark">YT ↗</span><span><b>YouTube</b><small>Mini stories & discovery</small><em>Expressive faces. Small emotional arcs.</em></span></a>
+        <a href="https://www.facebook.com/bulldogsmanila/" rel="me external"><span class="social-mark">f ↗</span><span><b>Facebook</b><small>Community & connection</small><em>Family moments worth sharing.</em></span></a>
+        <a href="https://www.tiktok.com/@bulldogsmanila" rel="me external"><span class="social-mark">♪ ↗</span><span><b>TikTok</b><small>Personality & play</small><em>POV humor and pet-owner chaos.</em></span></a>
+        <a href="https://www.instagram.com/bulldogsmanila/" rel="me external"><span class="social-mark">◎ ↗</span><span><b>Instagram</b><small>The visual world</small><em>Cozy reels and editorial moments.</em></span></a>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
